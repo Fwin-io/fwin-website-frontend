@@ -1,0 +1,114 @@
+@keyframes meteor {
+    0% {
+        transform: rotate(215deg) translateX(0);
+        opacity: 1
+    }
+
+    70% {
+        opacity: 1
+    }
+
+    to {
+        transform: rotate(215deg) translateX(-500px);
+        opacity: 0
+    }
+}
+
+.animate-meteor-effect {
+    animation: meteor 5s linear infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .5
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite
+}
+
+@keyframes ready-to-launch-rocket {
+    0% {
+        transform: translateY(.5px)
+    }
+
+    10%,90% {
+        transform: translateX(.5px)
+    }
+
+    20%,80% {
+        transform: translateX(-.5px)
+    }
+
+    30%,50%,70% {
+        transform: translateX(.5px)
+    }
+
+    40%,60% {
+        transform: translateX(-.5px)
+    }
+
+    50% {
+        transform: translateY(-.5px)
+    }
+}
+
+.crash-preview-rocket {
+    animation: ready-to-launch-rocket .08s ease-in-out infinite;
+}
+
+@keyframes enter {
+    0% {
+        opacity: var(--tw-enter-opacity,1);
+        transform: translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0) scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1)) rotate(var(--tw-enter-rotate,0))
+    }
+}
+
+@keyframes exit {
+    to {
+        opacity: var(--tw-exit-opacity,1);
+        transform: translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0) scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1)) rotate(var(--tw-exit-rotate,0))
+    }
+}
+
+
+@keyframes _1luule41 {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(1turn)
+    }
+}
+@keyframes _9pm4ki0 {
+    0% {
+        transform: translateY(100%)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes _9pm4ki1 {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
