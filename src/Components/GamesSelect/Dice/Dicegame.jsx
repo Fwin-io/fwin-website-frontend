@@ -2,17 +2,30 @@ import React, { Component } from 'react';
 
 
 class Dicegame extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-         
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+        isCheckedDice1: false,
+        isCheckedDice3: false,
+        isCheckedDice3: false,
+        isCheckedDice4: false,
+        isCheckedDice5: false,
+        isCheckedDice6: false,
+    };
+    // Bind the handleDiceClick method
+    this.handleDiceClick = this.handleDiceClick.bind(this);
+}
+
+handleDiceClick(dice) {
+  this.setState((prevState) => ({
+      [dice]: !prevState[dice],
+  }));
+}
 
    
 
     render() {
-        
+      const { isCheckedDice1, isCheckedDice2, isCheckedDice3, isCheckedDice4, isCheckedDice5, isCheckedDice6 } = this.state;
 
         return (
           <>
@@ -31,6 +44,7 @@ class Dicegame extends Component {
   aria-label="Dice 1"
   tabindex="-1"
   data-radix-collection-item=""
+  onClick={() => this.handleDiceClick('isCheckedDice1')}
 >
   <svg
     width="80"
@@ -44,13 +58,13 @@ class Dicegame extends Component {
       width="79"
       height="79"
       rx="19.5"
-      fill="white"
-      stroke="#808080"
+      fill={`${isCheckedDice1 === true ? 'black' : 'white'}`}
+      stroke="#e4e4e7"
       stroke-width="1"
     ></rect>
-    <circle cx="40" cy="40" r="7" fill="black"></circle>
+    <circle cx="40" cy="40" r="7" fill={`${isCheckedDice1 === true ? 'white' : 'black'}`}></circle>
   </svg>
-</button>
+                </button>
                 <button
                   type="button"
                   aria-pressed="false"
@@ -59,6 +73,7 @@ class Dicegame extends Component {
                   aria-label="Dice 2"
                   tabindex="-1"
                   data-radix-collection-item=""
+                  onClick={() => this.handleDiceClick('isCheckedDice2')}
                 >
                   <svg
                     width="80"
@@ -72,12 +87,12 @@ class Dicegame extends Component {
                       width="79"
                       height="79"
                       rx="19.5"
-                      fill="white"
-      stroke="#808080"
+                      fill={`${isCheckedDice2 === true ? 'black' : 'white'}`}
+      stroke="#e4e4e7"
       stroke-width="1"
                     ></rect>
-                    <circle cx="20" cy="20" r="7"></circle>
-                    <circle cx="60" cy="60" r="7"></circle>
+                    <circle cx="20" cy="20" r="7" fill={`${isCheckedDice2 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="60" r="7" fill={`${isCheckedDice2 === true ? 'white' : 'black'}`}></circle>
                   </svg>
                 </button>
                 <button
@@ -88,6 +103,7 @@ class Dicegame extends Component {
                   aria-label="Dice 3"
                   tabindex="-1"
                   data-radix-collection-item=""
+                  onClick={() => this.handleDiceClick('isCheckedDice3')}
                 >
                   <svg
                     width="80"
@@ -101,13 +117,13 @@ class Dicegame extends Component {
                       width="79"
                       height="79"
                       rx="19.5"
-                      fill="white"
-      stroke="#808080"
+                      fill={`${isCheckedDice3 === true ? 'black' : 'white'}`}
+      stroke="#e4e4e7"
       stroke-width="1"
                     ></rect>
-                    <circle cx="40" cy="40" r="7"></circle>
-                    <circle cx="60" cy="60" r="7"></circle>
-                    <circle cx="20" cy="20" r="7"></circle>
+                    <circle cx="40" cy="40" r="7" fill={`${isCheckedDice3 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="60" r="7" fill={`${isCheckedDice3 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="20" cy="20" r="7" fill={`${isCheckedDice3 === true ? 'white' : 'black'}`}></circle>
                   </svg>
                 </button>
                 <button
@@ -118,6 +134,7 @@ class Dicegame extends Component {
                   aria-label="Dice 4"
                   tabindex="0"
                   data-radix-collection-item=""
+                  onClick={() => this.handleDiceClick('isCheckedDice4')}
                 >
                   <svg
                     width="80"
@@ -131,14 +148,14 @@ class Dicegame extends Component {
                       width="79"
                       height="79"
                       rx="19.5"
-                      fill="white"
-      stroke="#808080"
+                      fill={`${isCheckedDice4 === true ? 'black' : 'white'}`}
+      stroke="#e4e4e7"
       stroke-width="1"
                     ></rect>
-                    <circle cx="20" cy="20" r="7"></circle>
-                    <circle cx="60" cy="20" r="7"></circle>
-                    <circle cx="60" cy="60" r="7"></circle>
-                    <circle cx="20" cy="60" r="7"></circle>
+                    <circle cx="20" cy="20" r="7" fill={`${isCheckedDice4 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="20" r="7" fill={`${isCheckedDice4 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="60" r="7" fill={`${isCheckedDice4 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="20" cy="60" r="7" fill={`${isCheckedDice4 === true ? 'white' : 'black'}`}></circle>
                   </svg>
                 </button>
                 <button
@@ -149,6 +166,7 @@ class Dicegame extends Component {
                   aria-label="Dice 5"
                   tabindex="-1"
                   data-radix-collection-item=""
+                  onClick={() => this.handleDiceClick('isCheckedDice5')}
                 >
                   <svg
                     width="80"
@@ -162,15 +180,15 @@ class Dicegame extends Component {
                       width="79"
                       height="79"
                       rx="19.5"
-                      fill="white"
-      stroke="#808080"
+                      fill={`${isCheckedDice5 === true ? 'black' : 'white'}`}
+      stroke="#e4e4e7"
       stroke-width="1"
                     ></rect>
-                    <circle cx="40" cy="40" r="7"></circle>
-                    <circle cx="20" cy="20" r="7"></circle>
-                    <circle cx="60" cy="20" r="7"></circle>
-                    <circle cx="60" cy="60" r="7"></circle>
-                    <circle cx="20" cy="60" r="7"></circle>
+                    <circle cx="40" cy="40" r="7" fill={`${isCheckedDice5 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="20" cy="20" r="7" fill={`${isCheckedDice5 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="20" r="7" fill={`${isCheckedDice5 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="60" r="7" fill={`${isCheckedDice5 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="20" cy="60" r="7" fill={`${isCheckedDice5 === true ? 'white' : 'black'}`}></circle>
                   </svg>
                 </button>
                 <button
@@ -181,6 +199,7 @@ class Dicegame extends Component {
                   aria-label="Dice 6"
                   tabindex="-1"
                   data-radix-collection-item=""
+                  onClick={() => this.handleDiceClick('isCheckedDice6')}
                 >
                   <svg
                     width="80"
@@ -194,16 +213,16 @@ class Dicegame extends Component {
                       width="79"
                       height="79"
                       rx="19.5"
-                      fill="white"
-      stroke="#808080"
+                      fill={`${isCheckedDice6 === true ? 'black' : 'white'}`}
+      stroke="#e4e4e7"
       stroke-width="1"
                     ></rect>
-                    <circle cx="20" cy="40" r="7"></circle>
-                    <circle cx="20" cy="60" r="7"></circle>
-                    <circle cx="60" cy="40" r="7"></circle>
-                    <circle cx="60" cy="60" r="7"></circle>
-                    <circle cx="60" cy="20" r="7"></circle>
-                    <circle cx="20" cy="20" r="7"></circle>
+                    <circle cx="20" cy="40" r="7" fill={`${isCheckedDice6 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="20" cy="60" r="7" fill={`${isCheckedDice6 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="40" r="7" fill={`${isCheckedDice6 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="60" r="7" fill={`${isCheckedDice6 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="60" cy="20" r="7" fill={`${isCheckedDice6 === true ? 'white' : 'black'}`}></circle>
+                    <circle cx="20" cy="20" r="7" fill={`${isCheckedDice6 === true ? 'white' : 'black'}`}></circle>
                   </svg>
                 </button>
               </div>
